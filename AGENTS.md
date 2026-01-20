@@ -36,33 +36,20 @@ just info      # generate type definition files
 ### `moon ide` - Semantic Code Navigation
 
 ```bash
-# Find symbol definition
-moon ide goto-definition -query 'symbol_name'
-moon ide goto-definition -query 'Type::method'
-
-# Find with tag filtering (pub fn, struct, trait, etc.)
-moon ide goto-definition -tags 'pub fn' -query 'my_func'
-
-# Find in specific package
-moon ide goto-definition -query '@pkg_name symbol'
-
-# Find all references
-moon ide find-references -query 'MyType'
-
-# Show definition inline
+# Show symbol definition with source code
+moon ide peek-def fib
 moon ide peek-def Type::method
 
-# List symbols in package/file
-moon ide outline .
+# List symbols in a file
 moon ide outline src/lib.mbt
 ```
 
-### `moon doc` - API Discovery
+### `moon doc` - Standard Library API Discovery
 
 ```bash
-moon doc ''           # List available packages
-moon doc 'String'     # List String methods
-moon doc '@buffer'    # List symbols in package
+moon doc 'String'         # List String methods
+moon doc 'Array'          # List Array methods
+moon doc '@json'          # List symbols in package
 moon doc 'String::*rev*'  # Glob pattern search
 ```
 
