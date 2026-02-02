@@ -2,6 +2,10 @@
 
 This is a [MoonBit](https://docs.moonbitlang.com) project.
 
+## Development Guide
+
+see also @docs/DEVELOPMENT_GUIDE.md
+
 ## Quick Commands
 
 ```bash
