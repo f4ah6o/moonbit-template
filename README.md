@@ -59,7 +59,3 @@ my-project/
 - Benchmarks with `moon bench`
 - GitHub Actions CI
 - Claude Code / GitHub Copilot support (AGENTS.md)
-
-## License
-
-Apache-2.0
