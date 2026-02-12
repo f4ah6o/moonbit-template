@@ -1,10 +1,10 @@
 ///|
 test "fib benchmark" (b : @bench.T) {
-  b.bench(fn() { ignore(fib(20)) })
+  b.bench(() => 20 |> fib |> ignore)
 }
 
 ///|
 test "sum benchmark" (b : @bench.T) {
   let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  b.bench(fn() { ignore(sum(data~)) })
+  b.bench(() => ignore(sum(data~)))
 }

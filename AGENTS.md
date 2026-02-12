@@ -27,38 +27,25 @@ just info      # generate type definition files
 ## Coding Convention
 
 - Each block is separated by `///|`
+- Use `moon ide` commands for code navigation (prefer over grep)
+- Use `moon doc '<Type>'` to explore APIs before implementing
 - MoonBit code uses snake_case for variables/functions (lowercase only)
-
-## Code Navigation (IMPORTANT)
-
-**Always use `moon ide` and `moon doc` instead of grep/Read for code exploration.**
-
-### `moon ide` - Semantic Code Navigation
-
-```bash
-# Show symbol definition with source code
-moon ide peek-def fib
-moon ide peek-def Type::method
-
-# List symbols in a file
-moon ide outline src/lib.mbt
-```
-
-### `moon doc` - Standard Library API Discovery
-
-```bash
-moon doc 'String'         # List String methods
-moon doc 'Array'          # List Array methods
-moon doc '@json'          # List symbols in package
-moon doc 'String::*rev*'  # Glob pattern search
-```
+- UpperCamelCase for types, enums, and enum variants
+- `nobreak` (not `else`) for functional for-loop exit values
+- No `return` needed — last expression is the return value
+- No `try` needed for error propagation — automatic (unlike Swift)
+- Type parameter comes after `fn`: `fn[T] foo(x: T) -> T`
+- Legacy `function_name!(...)` and `function_name(...)?` are deprecated
 
 ## Tooling
 
-- `moon fmt` is used to format your code properly.
-- `moon info` is used to update the generated interface of the package.
-- `moon test` to check the test is passed. Use `moon test --update` to update snapshots.
-- `moon check` to check the code is linted correctly.
+- `moon fmt` - format code
+- `moon info` - update generated package interfaces (`.mbti`)
+- `moon test` - run tests. Use `moon test --update` to update snapshots.
+- `moon check --deny-warn` - type check with warnings as errors
+- `moon doc '<query>'` - discover APIs (more accurate than grep)
+- `moon ide peek-def <Symbol>` - show symbol definition
+- `moon ide find-references <Symbol>` - find all references
 
 ## Before Commit
 
