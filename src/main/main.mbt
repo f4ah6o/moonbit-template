@@ -1,5 +1,5 @@
 ///|
-async fn main {
+async fn main noraise {
   @async.sleep(16)
-  println(@lib.fib(10))
+  10 |> @lib.fib |> println
 }

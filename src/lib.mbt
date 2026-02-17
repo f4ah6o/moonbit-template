@@ -18,7 +18,10 @@ pub fn fib(n : Int) -> Int64 {
 /// start is an optional labelled argument with default value 0 having type Int
 /// length is an optional labelled argument without default value having type Option[Int]
 pub fn sum(data~ : Array[Int], start? : Int = 0, length? : Int) -> Int {
-  let end = if length is Some(length) { start + length } else { data.length() }
+  let end = match length {
+    Some(length) => start + length
+    None => data.length()
+  }
   for i = start, sum = 0; i < end; i = i + 1, sum = sum + data[i] {
 
   } nobreak {
